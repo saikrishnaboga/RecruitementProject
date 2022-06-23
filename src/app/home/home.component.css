@@ -1,0 +1,304 @@
+
+
+.option-container {
+    text-align: right;
+    margin: 0px;
+}
+
+
+
+.nav-bar {
+    height: 12%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+
+
+
+
+.user-heading {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 8px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.search-input {
+    background-color: transparent;
+    margin: 10px;
+    height: 30px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #001a33;
+
+}
+
+.demo-table {
+    width: 100%;
+  }
+
+.show {
+
+    font-family: 'Roboto';
+    margin: 8px;
+}
+
+.plus {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.entries {
+    font-weight: 100;
+    font-family: 'Roboto';
+    margin: 8px;
+}
+
+.name {
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #511aab;
+    margin: 15px;
+}
+.mail {
+    font-family: sans-serif;
+    font-size: 16px;
+    color: black;
+    margin: 15px;
+}
+
+.s-no {
+    font-family: "Roboto";
+    font-size: 16px;
+    color: black;
+    margin: 15px;
+}
+
+.heading {
+    font-family: 'Roboto';
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: transparent;
+    border-color: #16e082;
+    border-radius: 8px;
+    color: #16e082;
+    padding: 6px;
+    margin: 6px;
+
+}
+
+.dashboard {
+    color: #ffffff;
+    margin: 5px;
+
+}
+
+.options-list {
+    color: #ffffff;
+}
+
+.search-container {
+    justify-content: space-evenly;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: row;
+    background-image: url("https://assets.ccbp.in/frontend/intermediate-rwd/landing-page-lg-bg.png");
+    height: 100vh;
+    background-size: cover;
+    /* height: fit-content; */
+    padding: 12px;
+    /* width: fit-content; */
+}
+
+.form-control-btn {
+    background-color: transparent;
+    border-color: #ff6600;
+    border-radius: 8px;
+    color: #ff6600;
+    padding: 6px;
+    margin: 6px;
+}
+/*
+
+
+.add-user-btn {
+    background-color: #001a33;
+    color: white;
+    padding: 10px;
+    border: 0px;
+    margin: 10px;
+    height: 50px;
+    border-radius: 9px;
+    display: block;
+
+
+    } */
+
+
+
+    .dashboard-icon-btn {
+        display: inline-block;
+        padding: 8px;
+        width: 126px;
+        height: 50px;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+        margin: 10px;
+        outline: none;
+        color: #fff;
+        /* background-color: #041a2e; */
+        border: none;
+        border-radius: 10px;
+        /* box-shadow: 0 9px #999; */
+      }
+
+      .dashboard-icon-btn:hover {background-color: #004080; width: fit-content;}
+
+       /* .dashboard-icon-btn:active {
+         background-color: #041a2e;
+         box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }  */
+
+
+
+
+
+
+
+
+
+.icon-btn {
+    display: inline-block;
+
+    font-size: 17px;
+    cursor: pointer;
+    font-family: sans-serif;
+    text-decoration: none;
+    outline: none;
+    color: black;
+    margin: 4px;
+    /* background-color: #9da39d; */
+    border: none;
+
+  }
+
+  .icon-btn:hover {background-color: #9da39d; height: 25px;}
+
+  .icon-btn:active {
+    background-color: #9da39d;
+
+    /* box-shadow: 0 5px #666; */
+    /* transform: translateY(4px); */
+  }
+
+
+
+
+
+
+.user-containar {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.button-container {
+    background-color: #b3d1ff;
+}
+
+
+
+.profile-container {
+    background-color: whitesmoke;
+    width: 85%;
+    max-height: fit-content;
+    min-height: fit-content;
+
+    padding: 20px;
+    border-radius: 15px;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; */
+
+
+}
+
+
+.dashboard-icon {
+    color: white;
+}
+
+.form-control-num {
+    width: 100px;
+    color: black;
+    height: 30px;
+    margin: 8px;
+}
+
+.home-heading {
+    font-family: "Roboto";
+    font-size: 46px;
+
+    padding: 10px;
+    color: white;
+}
+
+.bg-color {
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+
+
+
+
+}
+
+.home-para {
+    font-family: Roboto;
+    font-size: 20px;
+    padding: 12px;
+    margin: 10px;
+    color: white;
+}
+
+
+
+
+
+
+.info {
+    padding-top: 15px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 15px;
+    margin: 8px;
+    margin: 8px;
+}
+
+
+
+.row-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}

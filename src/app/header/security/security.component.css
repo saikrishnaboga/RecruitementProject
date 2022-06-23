@@ -1,0 +1,180 @@
+.heading {
+    color: black;
+    font-size: 20px;
+    font-family: Roboto;
+    margin: 10px;
+
+}
+
+.d {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    justify-self: start;
+    align-self: start;
+}
+
+.matter {
+    color: black;
+    font-size: 18px;
+    font-family: Roboto;
+    margin: 10px;
+}
+
+.line {
+    width: 30px;
+    height: 30px;
+    background-color: #000066;
+}
+.cs-container {
+    background-color: #000066;
+    padding: 10px;
+    padding: 20px;
+}
+
+.security-heading {
+    color: white;
+    font-size: 36px;
+    font-family: Roboto;
+
+}
+
+.h-line {
+    border-width: 10px;
+    border-color: #4287f5;
+    width: 20%;
+    
+    
+}
+
+.task-line {
+    border-width: 10px;
+    border-color: #4287f5;
+    
+    
+  
+}
+
+
+
+
+
+.bg-clr {
+    background-color: #4287f5;
+    text-align: center;
+    height: 25px;
+    width: 25px;
+    border-radius: 40px;
+    color: white;
+    font-weight: bold;
+
+}
+
+
+
+.bg-clr1 {
+    background-color: #4287f5;
+    text-align: center;
+    height: 25px;
+    width: 25px;
+    border-radius: 40px;
+    color: black;
+    font-weight: bold;
+
+}
+
+.rpa-matter {
+    color: white;
+    font-size: 17px;
+    font-family: Roboto;
+}
+
+
+.task-heading {
+    color: black;
+    font-size: 25px;
+    font-family: Roboto;
+    
+}
+
+.security-image {
+    background-image: url("https://res.cloudinary.com/dbdrjxgra/image/upload/v1654270025/images_2_baqgnv.jpg");
+    height: 55vh;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.task-matter {
+    color: black;
+    font-size: 20px;
+    font-family: Roboto;
+}
+
+
+
+
+
+.cs-container1 {
+    background-color: white;
+    padding: 10px;
+    padding: 20px;
+}
+.cs-heading {
+    color: white;
+    font-size: 25px;
+    margin: 10px;
+    font-family: Roboto;
+
+
+}
+
+
+.cs-heading1 {
+    color: black;
+    font-size: 25px;
+    margin: 10px;
+    font-family: Roboto;
+    
+
+
+}
+
+
+.cs-matter {
+    color: white;
+    font-size: 22px;
+    margin: 10px;
+    font-family: Roboto;
+}
+
+.task-img {
+    width: 50px;
+}
+
+.cs-points {
+    color: white;
+    font-size: 18px;
+    margin-left: 5px;
+    font-family: Roboto;
+
+}
+
+.cs-points1 {
+    color: black;
+    font-size: 18px;
+    margin-left: 5px;
+    font-family: Roboto;
+
+}
+
+
+
+
+

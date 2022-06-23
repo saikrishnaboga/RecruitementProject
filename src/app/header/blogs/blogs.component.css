@@ -1,0 +1,60 @@
+.main-container{
+    height: 100vh;
+}
+
+.blog-img {
+    height: 30vh;
+    width: 30vw;
+}
+
+.blog-heading{
+    color: #000066;
+    font-size: 23px;
+    font-weight: 500;
+    margin: 15px;
+
+}
+
+.blog-matter{
+    color: #000066;
+    font-size: 18px;
+    margin: 15px;
+
+}
+
+.blog-btn {
+    color: #3399ff;
+    font-size: 15px;
+    margin: 15px;
+}
+
+.blog-container {
+    width: 30%;
+
+}
+
+.main-blog-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    margin: 5px;
+}
+
+.epsoft-img {
+    /* width: 96vw;*/
+    height: 40vh; 
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+

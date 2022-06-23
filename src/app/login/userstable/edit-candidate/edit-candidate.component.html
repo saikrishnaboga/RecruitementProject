@@ -1,0 +1,63 @@
+<div class="container edit-container">
+    <h2>Edit Customer</h2>
+    <form class="form-container" #adduserform="ngForm" (ngSubmit)="updateCustomerById('candidateId')">
+        <!-- <div class="form-group">
+          <label for="id">id:</label>
+          <input type="text"class="form-control" required [(ngModel)]="customer.id"name="id" disabled>
+        </div> -->
+        <div class="form-group">
+            <label for="Firstname">candidate id:</label>
+            <input type="text" class="form-control" required [(ngModel)]="users.candidateId" name="candidateId" disabled>
+        </div>
+        <div class="form-group">
+            <label for="Lastname">Full Name:</label>
+            <input type="text" class="form-control" required [(ngModel)]="users.fullName" name="fullName" disabled>
+        </div>
+        <div class="form-group">
+            <label for="Email">Email Id:</label>
+            <input type="text" class="form-control" required [(ngModel)]="users.emailId " name="emailId" disabled>
+        </div>
+        <div class="form-group">
+            <label for="Firstname">Mobile:</label>
+            <input type="text" class="form-control" required [(ngModel)]="users.mobileNumber" name="mobileNumber" disabled>
+        </div>
+        <div class="form-group">
+            <label for="Firstname">Qualification:</label>
+            <input type="text" class="form-control" required [(ngModel)]="users.qualification" name="qualification" disabled>
+        </div>
+        <div class="form-group">
+            <label for="Firstname">Skills:</label>
+            <input type="text" class="form-control" required [(ngModel)]="users.skillSet" name="skillSet" disabled>
+        </div>
+        <div class="form-group">
+            <label for="Firstname">Experience:</label>
+            <input type="text" class="form-control" required [(ngModel)]="users.yearsOfExperience"
+                name="yearsOfExperience" disabled>
+        </div>
+        <div class="form-group">
+            <label for="Firstname">Expected Ctc:</label>
+            <input type="text" class="form-control" required [(ngModel)]="users.expectedCtc" name="expectedCtc" disabled>
+        </div>
+        <div class="form-group drop-down-edit-container">
+            <label for="Firstname">Status:</label>
+            <!-- <input type="text" class="form-control" required [(ngModel)]="users.status" name="status"> -->
+            <select required [(ngModel)]="users.status" cl name="status" class="drop-down" >
+                <option value="AppliedCandidates" selected>Applied Candidates</option>
+                <option value="firstLevel">First Level</option>
+                <option value="secondLevel">Second Level</option>
+                <option value="offerLetter">Selected Candidates</option>
+                <option value="withDraw">WithDrawn Candidates</option>
+            </select>
+        </div>
+        <button type=" submit" class="btn btn-success" (click)="gotolist()">update</button>&nbsp;&nbsp;
+        <button type="button" class=" btn btn-primary" (click)="gotolist()" >back</button>
+        <!-- Example single danger button -->
+        &nbsp;&nbsp;
+        <!-- <div class="btn-group">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Action
+            </button>
+        </div> -->
+    </form>
+</div>

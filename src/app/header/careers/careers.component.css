@@ -1,0 +1,61 @@
+.card-1 {
+    height: 50vh;
+    width: 50vw;
+    border-radius: 15px;
+
+}
+
+.benefits-heading {
+    background-color: #4287f5;
+    width: fit-content;
+    color: white;
+    padding: 5px;
+    font-family: Roboto;
+    margin-top: 25px;
+
+}
+
+.image {
+    width: 60px;
+}
+
+.img-container {
+    margin: 25px;
+    padding: 20px;
+}
+
+.working-heading {
+    color: #4287f5;
+    font-size: 25px;
+    font-family: Roboto;
+    padding: 10px;
+}
+
+.working-matter {
+    color: #000;
+    font-size: 17px;
+    font-family: Roboto;
+    padding: 10px;
+}
+
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+.heading {
+    color: black;
+    font-size: 25px;
+    font-family: Roboto;
+}
+.paragraph {
+    color: black;
+    font-size: 18px;
+    font-family: Roboto;
+}

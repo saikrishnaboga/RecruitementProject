@@ -1,0 +1,91 @@
+<nav id="nav-bar" class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img
+        src="https://www.epsoftinc.com/wp-content/uploads/2019/10/ep-soft-logo-rev@2x-1.png.webp"
+        class="epsoft-img"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <div class="d-flex flex-row mr-4">
+          <mat-icon><span class="user-icon">home</span></mat-icon>
+          <a
+            class="nav-link active"
+            id="navItem1"
+            routerLinkActive="active"
+            routerLink="/home"
+            (click)="onClick(1)"
+            [ngClass]="{'active': tab==='tab1'}"
+          >
+            Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </div>
+        <br />
+        <div class="d-flex flex-row mr-4">
+          <mat-icon><span class="user-icon">login</span></mat-icon>
+          <a class="nav-link" routerLink="/register" routerLinkActive="active"  (click)="onClick(2)"  [ngClass]="{'active': tab==='tab2'}" id="active" id="navItem2"
+            >Register</a
+          >
+        </div>
+        <br />
+        <div class="d-flex flex-row  mr-4">
+
+          <mat-icon><span class="user-icon" >maps_home_work</span></mat-icon>
+
+          <a class=" nav-link" routerLink="/login" routerLinkActive="active" id="navItem3" (click)="onClick(3)"  [ngClass]="{'active': tab==='tab3'}">Recruiter</a>
+
+          </div>
+          <br/>
+
+
+
+
+        <div class="d-flex flex-row mr-4">
+          <mat-icon><span class="user-icon">school</span></mat-icon>
+          <a
+            class="nav-link"
+            routerLink="/careers"
+            routerLinkActive="active"
+            id="navItem3"
+            (click)="onClick(4)"
+            [ngClass]="{'active': tab==='tab4'}"
+            >Careers</a
+          >
+        </div>
+        <br />
+        <div class="d-flex flex-row mr-4">
+          <mat-icon><span class="user-icon">business</span></mat-icon>
+          <a class="nav-link" routerLink="/blog" routerLinkActive="active" id="navItem4" (click)="onClick(5)"  [ngClass]="{'active': tab==='tab5'}">Blog</a>
+        </div>
+        <br />
+        <div class="d-flex flex-row mr-4">
+          <mat-icon><span class="user-icon">security</span></mat-icon>
+          <a class="nav-link" routerLink="/security" routerLinkActive="active" id="navItem5" (click)="onClick(6)" [ngClass]="{'active': tab==='tab6'}">Security</a>
+        </div>
+        <br />
+        <div class="d-flex flex-row mr-4">
+          <mat-icon><span class="user-icon">info</span></mat-icon>
+          <a class="nav-link" routerLink="/about"  id="navItem6"  (click)="onClick(7)" [ngClass]="{'active': tab==='tab7'}">About</a>
+        </div>
+        <br />
+        <div class="d-flex flex-row mr-4">
+           <mat-icon><span class="user-icon">logout</span></mat-icon>
+          <a class="nav-link" routerLink="/login" id="navItem7">Logout</a>
+         </div>
+      </div>
+    </div>
+  </div>
+</nav>

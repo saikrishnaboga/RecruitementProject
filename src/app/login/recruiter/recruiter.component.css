@@ -1,0 +1,54 @@
+.container-fluid{
+
+    /* background-image: url("https://www.epsoftinc.com/wp-content/uploads/2020/11/Meta-Images-03-scaled.jpg"); */
+    background-color: white;
+    background-size: cover;
+
+    height: 100vh;
+
+  }
+
+  .name{
+
+    color: blue;
+
+  }
+
+  .topnav {
+
+    overflow:hidden;
+
+    background-color: white;
+
+    margin-top: 10px;
+
+    font-weight: bold;
+
+  }
+
+  .topnav a {
+
+    float: left;
+
+    color: black;
+
+    text-align: center;
+
+    padding: 14px 16px;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    width:20%
+
+  }
+
+  .topnav a:hover {
+
+    background-color: grey;
+
+    color: black;
+
+  }  
+

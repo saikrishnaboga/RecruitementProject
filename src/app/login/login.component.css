@@ -1,28 +1,49 @@
 .main-container{
   display: flex;
   flex-direction: column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
+
+
+
 .form-and-carousel-container{
   display: flex;
-  border: 1px gray solid;
+  flex-direction: row;
   border-radius: 5px;
-  box-shadow: 5px 5px 5px 5px;
-  height: 90%;
-  width: 90vw;
+  /* border: #ccc  3px solid; */
+  box-shadow: 5px 5px 5px 5px #ccc;
 }
+
+@media screen and (min-width: 768px) {
+  .form-and-carousel-container{
+    flex-direction: row;
+    border: 1px gray solid;
+    border-radius: 5px;
+    align-items: center;
+  justify-content: center;
+  }
+}
+
 ngb-carousel .wrapper {
   /* border: red 2px solid; */
 }
 .carousel-container{
-  height: 100% !important;
-  width: 80% !important;
-  /* border: 2px blue solid; */
-  padding-left: 0px !important;
-  padding-right: 0px !important;
+  /* height: 50vh !important; */
 }
+
+@media screen and (min-width: 768px) {
+  .carousel-container{
+    height: 100% !important;
+    width: 80% !important;
+    /* border: 2px blue solid; */
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
+
 .image-carousel{
   height: 90vh !important;
   width: 100% !important;
@@ -45,8 +66,8 @@ ngb-carousel .wrapper {
 }
 .epsoft-logo{
   align-self: center;
-  height: 40%;
-  width: 80%;
+  height: 30%;
+  width: 70%;
 }
 .input-label-container{
   display: flex;
@@ -70,12 +91,28 @@ ngb-carousel .wrapper {
   height: 40px;
 }
 .login-button{
-  align-self: center;
+  align-self: flex-start;
+  width: 200px;
 }
 
+.fa-eye-slash:hover,
+.fa-eye:hover {
+  cursor: pointer;
+}
 
-
-
+.input-group-append{
+  height: 50px;
+  width: 50px;
+}
+.password-container{
+  /* display: flex; */
+}
+.error-msg {
+  color: Red;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
 
 
 

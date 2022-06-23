@@ -1,0 +1,19 @@
+.edit-container{
+  height: 100vh;
+  padding: 20px;
+}
+.form-container{
+  height: 70%;
+  width: 60%;
+}
+.drop-down-edit-container{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  /* border: 2px red solid; */
+}
+.drop-down{
+  height: 35px;
+  width: 300px;
+}
+

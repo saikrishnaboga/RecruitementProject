@@ -1,0 +1,150 @@
+.epsoft-img {
+  width: 220px;
+  padding: 10px;
+}
+
+.side-bar {
+  background-color: #001a33;
+  height: 100px;
+  /* border-top-right-radius: 20px; */
+
+}
+
+
+.dashboard-icon-btn {
+  display: inline-block;
+  padding: 8px;
+  width: 126px;
+  height: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 10px;
+  outline: none;
+  color: #fff;
+  /* background-color: #041a2e; */
+  border: none;
+  border-radius: 10px;
+  /* box-shadow: 0 9px #999; */
+}
+
+.dashboard-icon-btn:hover {background-color: #004080; width: fit-content;}
+
+ /* .dashboard-icon-btn:active {
+   background-color: #041a2e;
+   box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}  */
+
+
+
+
+.user-icon {
+  color: white;
+
+}
+
+.option-text {
+
+  color: #ffffff;
+}
+
+.active {
+  color: black;
+}
+
+.food-munch-logo {
+  width: 80px;
+  height: 70px;
+
+}
+#navItem1 {
+  color: white;
+  font-family: "Roboto";
+  font-size: 15px;
+  padding: 2px;
+  margin-left: 6px;
+
+}
+#navItem2 {
+  color: white;
+  font-family: "Roboto";
+  font-size: 15px;
+  padding: 2px;
+  margin-left: 6px;
+
+}
+#navItem3 {
+  color: white;
+  font-family: "Roboto";
+  font-size: 15px;
+  padding: 2px;
+  margin-left: 6px;
+
+}
+#navItem4 {
+  color: white;
+  font-family: "Roboto";
+  font-size: 15px;
+  padding: 2px;
+  margin-left: 6px;
+
+
+
+}
+
+#navItem5 {
+  color: white;
+  font-family: "Roboto";
+  font-size: 15px;
+  padding: 2px;
+  margin-left: 6px;
+
+}
+
+
+#navItem6 {
+  color: white;
+  font-family: "Roboto";
+  font-size: 15px;
+  padding: 2px;
+  margin-left: 6px;
+
+}
+
+#navItem7 {
+  color: white;
+  font-family: "Roboto";
+  font-size: 15px;
+  margin-left: 6px;
+  padding: 2px;
+
+
+}
+
+
+#nav-bar {
+    background-color: #001a33;
+}
+
+
+ a:hover {
+  text-decoration: underline;
+}
+
+a:focus {
+  text-decoration: underline;
+}
+
+ .active{
+  text-decoration: underline;
+
+}
+
+
+
+
+
+
+
+

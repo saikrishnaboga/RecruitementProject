@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="row">
+    <div class="col col-12 main-container">
+      <div class="form-and-carousel-container">
+        <div class="carousel-container">
+          <ngb-carousel class="ngb-carousel">
+            <ng-template ngbSlide *ngFor="let image of images">
+              <div class="wrapper">
+                <img
+                  [src]="image.src"
+                  class="image-carousel"
+                  alt="Random first slide"
+                />
+              </div>
+              <div class="carousel-caption">
+                <h3>{{ image.title }}</h3>
+                <p>{{ image.short }}</p>
+              </div>
+            </ng-template>
+          </ngb-carousel>
+        </div>
+        <div class="login-container">
+          <form class="form-container" [formGroup]="loginForm">
+            <img
+              class="epsoft-logo mb-2"
+              src="https://www.epsoftinc.com/wp-content/uploads/2019/10/ep-soft-logo@2x.png"
+            />
+            <br />
+            <div class="password-container">
+              <div class="input-group">
+                <input
+                  formControlName="userName"
+                  type="email"
+                  id="userName"
+                  placeholder="Enter Your Email"
+                  class="form-control input-login"
+                  required
+                />
+              </div>
+              <span
+                  class="error-msg"
+                  *ngIf="
+                  (loginForm.controls['userName'].dirty || loginForm.controls['userName'].touched) &&
+                  loginForm.hasError('required', 'userName')
+                "
+                  >*FullName is Required</span
+                >
+            </div>
+            <br />
+            <div class="password-container">
+              <div class="input-group">
+                <input
+                  formControlName="password"
+                  id="password"
+                  placeholder="Enter Your Password"
+                  class="form-control input-login"
+                  [type]="fieldTextType ? 'password' : 'text'"
+                  required
+                />
+              </div>
+              <span
+                class="error-msg"
+                *ngIf="
+                  (loginForm.controls['password'].dirty || loginForm.controls['password'].touched) &&
+                  loginForm.hasError('required', 'password')
+                "
+                >*FullName is Required</span
+              >
+              <!-- <div class="input-group-append">
+                <span class="input-group-text" (click)="toggleFieldTextType()">
+                  <i class="fa" ></i>
+                  s
+                </span>
+              </div> -->
+            </div>
+            <br/>
+            <button
+              class="btn btn-primary login-button"
+              type="submit"
+              (click)="login()"
+            >
+              login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

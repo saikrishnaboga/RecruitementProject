@@ -1,0 +1,124 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 20px;
+  align-items: center;
+  max-height: 100vh;
+  min-height: 100vh;
+}
+.input-label-container {
+  margin-bottom: 10px;
+}
+.image-container {
+  width: 50%;
+  height: 50%;
+}
+.card input {
+  margin-left: 10px;
+  margin-right: 15px;
+  width: 150px;
+}
+.Registration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  margin-top: 30px;
+}
+.register-form-container {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+.left-container {
+  margin: 20px;
+  width: 48%;
+  margin-right: 20px;
+}
+.inner-main-contianer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  padding: 10px;
+}
+.right-container {
+  width: 48%;
+}
+.register-button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.image-register {
+  width: 40vw;
+  height: 80vh;
+}
+img {
+  opacity: 0.8;
+}
+img:hover {
+  opacity: 1;
+}
+.registration {
+  text-align: center;
+  /* margin-left:600px; */
+  height: auto;
+}
+.marquee {
+  font-size: 3em;
+  color: #b0e0e6;
+  /* position: absolute; */
+  width: 60%;
+  height: 60%;
+  line-height: 50px;
+  /* font-weight: bold; */
+}
+.registration-form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  height: 50%;
+  /* border: white 5px dashed; */
+  justify-content: space-between;
+  margin-left: 20px;
+}
+.alert-danger {
+  background-color: red;
+}
+.alert {
+  color: white;
+}
+.error-msg {
+  color: Red;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.heading {
+  margin-bottom: 30px;
+  text-align: center;
+  color: black;
+  font-family: "Roboto";
+  font-size: 45px;
+}
+.form-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
+  padding: 10px;
+  /* height: 60vh; */
+  background-size: cover;
+}
+.form-control {
+  margin-bottom: -1px;
+}
