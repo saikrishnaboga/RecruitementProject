@@ -10,6 +10,8 @@
 }
 .input-label-container {
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
 }
 .image-container {
   width: 50%;
@@ -121,4 +123,23 @@ img:hover {
 }
 .form-control {
   margin-bottom: -1px;
+}
+.dr{
+  margin-bottom: 10px;
+}
+.drop-container{
+  /* border: grey 1px solid; */
+}
+.drop-down{
+  outline: none;
+  border: none;
+}
+em{
+  color: red;
+}
+.years-error{
+  margin-bottom: 10px;
+}
+.drop-down-container{
+  /* margin-bottom: 10px; */
 }

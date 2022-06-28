@@ -55,16 +55,32 @@ export class LoginComponent implements OnInit  {
 
   url: String = "http://10.12.1.123:8080/"
 
+  hide = true;
+
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group(
-      {
-      userName: ['', Validators.required],
-      password : ['', Validators.required]
+
+    let value: any = localStorage.getItem('isLogin');
+
+
+
+    console.log(value);
+    if(value != null){
+      this.router.navigate(['recruiter'])
+    }else {
+      this.router.navigate(['login'])
     }
-    )
+
+    this.loginForm = new FormGroup({
+      userName: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    })
+
+
   }
 
   login(){
+
+
     const userName = this.loginForm.value.userName;
     const password = this.loginForm.value.password;
     console.log(this.loginForm.value);
@@ -73,6 +89,8 @@ export class LoginComponent implements OnInit  {
       this.service.loginDetails(this.loginForm.value).subscribe((res: any) => {
         localStorage.setItem('user', JSON.stringify(res));
         if (res) {
+
+          localStorage.setItem('isLogin', 'authorizedUser');
           this.router.navigate(['recruiter']);
         } else {
           Swal.fire('Invalid User Details');

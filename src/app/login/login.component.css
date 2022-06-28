@@ -88,7 +88,13 @@ ngb-carousel .wrapper {
   border-radius: 5px;
   outline: none;
   margin-bottom: 5px;
-  height: 40px;
+  height: 45px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 87%;
+  border: 1px #ced4da solid;
 }
 .login-button{
   align-self: flex-start;
@@ -101,11 +107,10 @@ ngb-carousel .wrapper {
 }
 
 .input-group-append{
-  height: 50px;
-  width: 50px;
-}
-.password-container{
-  /* display: flex; */
+  height: 45px;
+  width: 40px;
+  background-color: #ffffff;
+  border-left: none;
 }
 .error-msg {
   color: Red;
@@ -113,14 +118,36 @@ ngb-carousel .wrapper {
   font-weight: 500;
   margin-bottom: 5px;
 }
+.password-container{
+  display: flex;
+  flex-direction: row;
+}
+.eye-icon{
+  height: 6px !important;
+  width: 6px !important;
+  padding-top: 3px;
+  padding-right: -5px;
+  cursor: pointer;
+  /* margin-bottom: 12px;
+  margin-right: 10px; */
+  /* position: absolute; */
+  /* top: 6px;
+  right: 10px; */
+  /* left: 0; */
+  /* bottom: 0; */
+  /* margin-right: 10px; */
+}
 
-
-
-
-
-
-
-
+.password-cont{
+  padding-top: 4px;
+  border: 1px #ced4da solid;
+  border-left: none;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.username{
+  width: 98%;
+}
 
 
 

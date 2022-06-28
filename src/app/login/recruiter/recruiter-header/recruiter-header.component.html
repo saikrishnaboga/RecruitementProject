@@ -81,9 +81,9 @@
           <a class="nav-link" routerLink="/about"  id="navItem6"  (click)="onClick(7)" [ngClass]="{'active': tab==='tab7'}">About</a>
         </div>
         <br />
-        <div class="d-flex flex-row mr-4">
-           <mat-icon><span class="user-icon">logout</span></mat-icon>
-          <a class="nav-link" routerLink="/login" id="navItem7">Logout</a>
+        <div class="d-flex flex-row mr-4" >
+           <mat-icon><span class="user-icon" (click)="onLogOut()" >logout</span></mat-icon>
+          <!-- <a class="nav-link"   routerLink="/login" id="navItem7">Logout</a> -->
          </div>
       </div>
     </div>

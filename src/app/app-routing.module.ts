@@ -24,22 +24,13 @@ const appRoutes: Routes = [
   { path: 'security', component: SecurityComponent },
   { path: 'about', component: AboutComponent },
   { path: 'user-table', component: UserstableComponent },
-
   { path: 'recruiter', component: RecruiterComponent },
-
   { path: 'user-table', component: UserstableComponent },
   { path: 'edit-details', component: EditCandidateComponent },
   { path: 'edit-details/:candidateId', component: EditCandidateComponent },
   {
     path: '**', redirectTo: 'home' ,pathMatch: 'full'
   }
-
-
-
-
-
-
-
 ];
 
 @NgModule({

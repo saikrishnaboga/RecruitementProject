@@ -32,7 +32,7 @@ export class RegistrationComponent implements OnInit {
       emailId: new FormControl('', [Validators.required , Validators.email]),
       mobileNumber: new FormControl('', [
         Validators.required,
-        Validators.maxLength(10),
+        Validators.minLength(10),
       ]),
       qualification: new FormControl('', [Validators.required]),
       yearsOfExperience: new FormControl('', [Validators.required]),
@@ -44,6 +44,18 @@ export class RegistrationComponent implements OnInit {
     console.log(this.registerForm.value);
   }
 
+
+  onlyNumbersAllowed(event:any):any{
+
+  const charCode = (event.which)? event.which:event.keyCode;
+
+    if(charCode > 31 && (charCode < 48 || charCode > 57)){
+      console.log("char code restricted:"+charCode)
+      return false
+    }
+
+    return true
+  }
   // getFormValidationErrors() {
   //   Object.keys(this.registerForm.controls).forEach(key => {
   //     const controlErrors: any = this.registerForm.get(key).errors;
@@ -77,10 +89,14 @@ export class RegistrationComponent implements OnInit {
       (err) => {
         Swal.fire(
           'Error',
-          'Something Went Wrong PLease try after some time',
+          'something went wrong please try after some time',
           'error'
         );
       }
     );
   }
 }
+function numPattern(numPattern: any): import("@angular/forms").ValidatorFn {
+  throw new Error('Function not implemented.');
+}
+

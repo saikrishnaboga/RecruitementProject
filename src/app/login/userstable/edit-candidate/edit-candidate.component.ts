@@ -41,7 +41,16 @@ export class EditCandidateComponent implements OnInit {
       .subscribe((data) => {
         this.users = data;
         console.log('candidate added', data);
-      });
+        Swal.fire("success","Updated Status Successfully","success")
+        this.router.navigate(['recruiter']);
+      },(err) => {
+        Swal.fire(
+          'Error',
+          'Something Went Wrong PLease try after some time',
+          'error'
+        );
+      })
+
   }
 
   gotolist() {

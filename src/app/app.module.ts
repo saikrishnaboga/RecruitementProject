@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,Pipe } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,7 +17,7 @@ import { SecurityComponent } from './header/security/security.component';
 import { AboutComponent } from './header/about/about.component';
 import { UserstableComponent } from './login/userstable/userstable.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { RecruiterComponent } from './login/recruiter/recruiter.component';
 import { EditCandidateComponent } from './login/userstable/edit-candidate/edit-candidate.component';
@@ -60,6 +60,7 @@ import { RecruiterHeaderComponent } from './login/recruiter/recruiter-header/rec
     HttpClientModule,
     MatIconModule,
     NgxPaginationModule,
+    Ng2SearchPipeModule
   ],
   // exports [],
   providers: [UsersService],

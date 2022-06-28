@@ -33,51 +33,51 @@
                   type="email"
                   id="userName"
                   placeholder="Enter Your Email"
-                  class="form-control input-login"
-                  required
+                  class="input-login username"
+                  pattern="^\S*[@]\S*[.]\S*$"
+                  required ="required"
                 />
               </div>
-              <span
+            </div>
+            <span
                   class="error-msg"
                   *ngIf="
                   (loginForm.controls['userName'].dirty || loginForm.controls['userName'].touched) &&
-                  loginForm.hasError('required', 'userName')
+                  loginForm.hasError('required', 'userName') || loginForm.controls['userName'].hasError('pattern')
                 "
-                  >*FullName is Required</span
+                  >*username is Required</span
                 >
-            </div>
             <br />
             <div class="password-container">
-              <div class="input-group">
+              <div class="input-group" id="password-container">
                 <input
                   formControlName="password"
                   id="password"
                   placeholder="Enter Your Password"
-                  class="form-control input-login"
+                  class="input-login passwordClass"
+                  pattern="^\S*[@]\S*$"
                   [type]="fieldTextType ? 'password' : 'text'"
                   required
+                  style="border-right: none;"
                 />
+                <div (click)="toggleFieldTextType()" class="input-group-append password-cont">
+                    <mat-icon matSuffix (click)="hide = !hide" class="eye-icon">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </div>
               </div>
-              <span
+            </div>
+            <span
                 class="error-msg"
                 *ngIf="
                   (loginForm.controls['password'].dirty || loginForm.controls['password'].touched) &&
-                  loginForm.hasError('required', 'password')
+                  loginForm.hasError('required', 'password') || loginForm.controls['password'].hasError('pattern')
                 "
-                >*FullName is Required</span
+                >*password is Required</span
               >
-              <!-- <div class="input-group-append">
-                <span class="input-group-text" (click)="toggleFieldTextType()">
-                  <i class="fa" ></i>
-                  s
-                </span>
-              </div> -->
-            </div>
             <br/>
             <button
               class="btn btn-primary login-button"
-              type="submit"
               (click)="login()"
+              [disabled]="loginForm.invalid"
             >
               login
             </button>

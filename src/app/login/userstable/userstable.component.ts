@@ -15,7 +15,7 @@ export class UserstableComponent implements OnInit {
   no: any;
   email: any;
   p: number = 1;
-
+  term: any;
   // users = new Users();
   // candidateId:any
 
@@ -24,6 +24,37 @@ export class UserstableComponent implements OnInit {
   // userData = {};
   candidateId: any;
   withDrawnUsers: any = new Users();
+
+  tab : any = '';
+  tab1 : any;
+  tab2 : any;
+  tab3 : any;
+  tab4: any;
+  tab5: any;
+  tab6: any;
+  tab7: any;
+
+    onClick(check: any){
+        if(check==1){
+          this.tab = 'tab1';
+        }else if(check==2){
+          this.tab = 'tab2';
+        }else if(check==3){
+          this.tab = 'tab3';
+        }else if(check==4){
+          this.tab = 'tab4';
+        }else if(check==5){
+          this.tab = 'tab5';
+        }else if(check==6){
+          this.tab='tab6';
+        }else if(check==7){
+          this.tab='tab7'
+        }
+    }
+
+
+
+
 
   constructor(
     private service: ApiService,
@@ -44,6 +75,13 @@ export class UserstableComponent implements OnInit {
     // })
     console.log(this.users);
   }
+  onLogOut(){
+    console.log("Clicked logout Button");
+    // localStorage.removeItem('isLogin');
+    localStorage.clear();
+    this.router.navigate(['login']);
+  }
+
   getData() {
     this.service.getDetailsByStatus('AppliedCandidates').subscribe((data) => {
       this.users = data;
@@ -99,32 +137,27 @@ export class UserstableComponent implements OnInit {
     });
   }
   getFirstLevel() {
-    this.service.getDetailsByStatus('firstLevel').subscribe((data) => {
+    this.service.getDetailsByStatus('TechnicalRound').subscribe((data) => {
       this.users = data;
       // this.users.push(data);
     });
   }
   getSecondLevel() {
-    this.service.getDetailsByStatus('secondLevel').subscribe((data) => {
+    this.service.getDetailsByStatus('HrRound').subscribe((data) => {
       this.users = data;
       // this.users.push(data);
-
       console.log(data);
     });
   }
   offerLetter() {
     this.service.getDetailsByStatus('offerLetter').subscribe((data) => {
       this.users = data;
-
-
       console.log(data);
     });
   }
   Withdraw() {
-    this.service.getDetailsByStatus('withDraw').subscribe((data) => {
+    this.service.getDetailsByStatus('withDrawn').subscribe((data) => {
       this.users = data;
-
-
       console.log(data);
     });
   }

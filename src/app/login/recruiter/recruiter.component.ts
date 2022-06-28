@@ -8,11 +8,28 @@ import { ApiService } from 'src/app/apis.service';
   styleUrls: ['./recruiter.component.css'],
 })
 export class RecruiterComponent implements OnInit {
-  constructor(private service: ApiService, private route: Router) {}
+  constructor(private service: ApiService, private router: Router) {}
 
   public status: String = '';
 
   ngOnInit(): void {
+
+
+    let value: any = localStorage.getItem('isLogin');
+
+    console.log(value);
+
+    if (value != null) {
+
+    this.router.navigate(['recruiter']);
+
+     } else {
+
+     this.router.navigate(['login']);
+
+    }
+
+   console.log('lockjaw');
     // this.get()
   }
 

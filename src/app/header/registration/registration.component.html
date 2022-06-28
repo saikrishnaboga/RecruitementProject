@@ -9,17 +9,14 @@
     />
   </div>
   <div class="register-form-container">
-    <h1 class = "heading">Welcome To EPSoft</h1>
-    <form
-      class="registration-form"
-      [formGroup]="registerForm"
-    >
+    <h1 class="heading">Welcome To EPSoft</h1>
+    <form class="registration-form" [formGroup]="registerForm">
       <!-- <div class="register-form-container"> -->
       <div class="form-shadow">
         <div class="inner-main-contianer">
           <div class="left-container">
             <div class="input-label-container">
-              <label for="fullName">Full Name</label>
+              <label for="fullName">Full Name<em>*</em> </label>
               <input
                 class="form-control"
                 formControlName="fullName"
@@ -33,12 +30,12 @@
                   (registerForm.controls['fullName'].dirty || registerForm.controls['fullName'].touched) &&
                   registerForm.hasError('required', 'fullName')
                 "
-                >*FullName is Required</span
+                >*Full Name is Required</span
               >
             </div>
 
             <div class="input-label-container">
-              <label for="email">Email id</label>
+              <label for="email">Email Id<em>*</em></label>
               <input
                 class="form-control"
                 formControlName="emailId"
@@ -46,39 +43,43 @@
                 required="required"
                 id="email"
                 placeholder="Enter your Email Id"
+                pattern="^\S*[@]\S*[.]\S*$"
               />
               <span
                 class="error-msg"
                 *ngIf="
                   (registerForm.controls['emailId'].dirty || registerForm.controls['emailId'].touched) &&
-                  registerForm.hasError('required', 'emailId')
+                  registerForm.hasError('required', 'emailId') || registerForm.controls['emailId'].hasError('pattern')
                 "
-                >*EmailId is Required</span
+                >*Invalid Email</span
               >
             </div>
 
             <div class="input-label-container">
-              <label for="mobileNumber">Mobile Number</label>
+              <label for="mobileNumber">Mobile Number<em>*</em></label>
               <input
                 class="form-control"
                 formControlName="mobileNumber"
                 type="text"
+                (keypress)="onlyNumbersAllowed($event)"
                 id="mobileNumber"
-                placeholder="+91 Enter your Mobile Number"
-                maxlength=""
+                placeholder="Enter your Mobile Number"
+                maxLength="10"
+                minlength="10"
+                matInput
               />
               <span
                 class="error-msg"
                 *ngIf="
                   (registerForm.controls['mobileNumber'].dirty || registerForm.controls['mobileNumber'].touched ) &&
-                  registerForm.hasError('required', 'mobileNumber')
+                  registerForm.hasError('required', 'mobileNumber') || registerForm.controls['mobileNumber'].hasError('pattern')
                 "
-                >*MobileNumber is Required</span
+                >*Mobile Number is Required</span
               >
             </div>
 
             <div class="input-label-container">
-              <label for="qualification">Qualification</label>
+              <label for="qualification">Qualification<em>*</em></label>
               <input
                 class="form-control"
                 formControlName="qualification"
@@ -88,7 +89,7 @@
               />
               <span
                 class="error-msg"
-                    *ngIf=" (registerForm.controls['qualification'].dirty || registerForm.controls['qualification'].touched )&&
+                *ngIf=" (registerForm.controls['qualification'].dirty || registerForm.controls['qualification'].touched ) &&
                   registerForm.hasError('required', 'qualification')
                 "
                 >*Qualification is Required</span
@@ -97,29 +98,33 @@
           </div>
 
           <div class="right-container">
-            <div class="input-label-container">
-              <label>Years of Experience</label>
-              <select class="form-control"  formControlName="yearsOfExperience">
-                <option value="" disabled hidden>Select Exeperience</option>
-                <option value="0">0</option>
-                <option value="1">1 year</option>
-                <option value="2">2 years</option>
-                <option value="3">3 years</option>
-                <option value="4">4 years</option>
-                <option value="5">More then 4years</option>
-              </select>
+            <label>Years of Experience</label>
+
+              <div
+                class="form-control drop-down-container input-label-container"
+              >
+                <select class="drop-down" required formControlName="yearsOfExperience">
+                  <option value="" disabled hidden>Select Experience</option>
+                  <option value="0" selected>Fresher</option>
+                  <option value="1">1 year</option>
+                  <option value="2">2 years</option>
+                  <option value="3">3 years</option>
+                  <option value="4">4 years</option>
+                  <option value="5">More than 4 years</option>
+                </select>
+              </div>
               <span
-                class="error-msg"
+                class="error-msg years-error"
                 *ngIf="
                 (  registerForm.controls['yearsOfExperience'].dirty || registerForm.controls['yearsOfExperience'].touched ) &&
                   registerForm.hasError('required', 'yearsOfExperience')
                 "
                 >*Years Of Experience is Required</span
               >
-            </div>
+              <p></p>
 
             <div class="input-label-container">
-              <label for="dateOfBirth">Date of birth</label>
+              <label for="dateOfBirth">Date of birth<em>*</em></label>
               <input
                 class="form-control"
                 formControlName="dateOfBirth"
@@ -133,12 +138,12 @@
                   (registerForm.controls['dateOfBirth'].dirty || registerForm.controls['dateOfBirth'].touched )&&
                   registerForm.hasError('required', 'dateOfBirth')
                 "
-                >*DateOfBirth is Required</span
+                >*Date Of Birth is Required</span
               >
             </div>
 
             <div class="input-label-container">
-              <label for="expectedCTC">Expected CTC</label>
+              <label for="expectedCTC">Expected CTC<em>*</em></label>
               <input
                 class="form-control"
                 formControlName="expectedCtc"
@@ -158,79 +163,40 @@
 
             <div class="input-label-container">
               <label for="skillSet">Skill Set</label>
-              <input
+              <textarea
+                rows="2"
+                cols="50"
                 class="form-control"
                 formControlName="skillSet"
-                type="text"
                 id="skillSet"
                 placeholder="Enter your Skill Set"
-              />
+              >
+              </textarea>
               <span
                 class="error-msg"
                 *ngIf="
                   (registerForm.controls['skillSet'].dirty || registerForm.controls['skillSet'].touched  )&&
                   registerForm.hasError('required', 'skillSet')
                 "
-                >*SkillSet is Required</span
+                >*SkillSet is Required<em>*</em></span
               >
             </div>
           </div>
         </div>
         <div class="register-button-container ml-auto">
           <!-- [disabled]="registerForm.invalid" -->
-          <button class="btn btn-primary"   (click) = "register()" [disabled]="registerForm.invalid"   >Register</button>
+          <button
+            class="btn btn-primary"
+            (click)="register()"
+            [disabled]="registerForm.invalid"
+          >
+            Register
+          </button>
         </div>
       </div>
     </form>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- <div class="main-container">
   <div class="image-container">
@@ -245,28 +211,23 @@
         <input class="form-control" formControlName="fullName" type="text" id="fullName"
           placeholder="Enter your Full Name" /><br> -->
 
-
-
-        <!-- <span class="text-danger" *ngIf="registerForm.controls['fullname'].dirty && registerForm.hasError('required','fullname')">**Email Id is required</span> -->
-        <!-- <span id="fullname" class="text-danger font-weight-bold"> -->
-        <!-- </span> -->
-        <!-- <p>Form value: {{ requiredForm.value | json }}</p>
+<!-- <span class="text-danger" *ngIf="registerForm.controls['fullname'].dirty && registerForm.hasError('required','fullname')">**Email Id is required</span> -->
+<!-- <span id="fullname" class="text-danger font-weight-bold"> -->
+<!-- </span> -->
+<!-- <p>Form value: {{ requiredForm.value | json }}</p>
           <p>Form status: {{ requiredForm.status | json }}</p> -->
 
-
-        <!-- </div>
+<!-- </div>
       <div class="input-label-container">
         <label for="email">Email id</label>
         <input class="form-control" formControlName="emailId" type="email" required="required" id="email"
           placeholder="Enter your Email Id" /> <br> -->
 
-
-
-        <!-- <div *ngif="email.touched && email-invalid" class="alert alert-danger">
+<!-- <div *ngif="email.touched && email-invalid" class="alert alert-danger">
             Email id is required
           </div> -->
-        <!-- <span class="text-danger" *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('required','email')">**Email Id is required</span> -->
-      <!-- </div>
+<!-- <span class="text-danger" *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('required','email')">**Email Id is required</span> -->
+<!-- </div>
       <div class="input-label-container">
         <label for="mobileNumber">Mobile Number</label>
         <input class="form-control" formControlName="mobileNumber" pattern=" [1-9]{1}[0-9]{9}" maxlength="10"
@@ -303,25 +264,25 @@
         <input class="form-control" formControlName="skillSet" type="text" id="skillSet"
           placeholder="Enter your Skill Set" />
       </div>
-      <!-- <div class="input-label-container">
+      <div class="input-label-container">
             <label for="resume">Resume</label>
             <input class="form-control"
              type="file" id="resume" placeholder="Upload your Resume" />
           </div> -->
-      <!-- <div><br>
+<!-- <div><br>
         <button type="submit" formControlName="submit" class="btn-outline-primary registration" value="">Register
           now</button>
       </div> -->
-      <!-- (click)="register()"" -->
-      <!-- <script type="text/javascript">
+<!-- (click)="register()"" -->
+<!-- <script type="text/javascript">
             function validation(){
               var user=document.getElementById('fullname').value;
               if (user==""){
                 document.getElementById('fullname').innerHTML="**This field is required";
                 return false;
               }-->
-      <!-- }  -->
-      <!-- </script> -->
-    <!-- </form>
+<!-- }  -->
+<!-- </script> -->
+<!-- </form>
   </div>
 </div>  -->

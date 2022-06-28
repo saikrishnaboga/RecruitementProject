@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recruiter-header',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecruiterHeaderComponent implements OnInit {
 
-  constructor() { }
 
+  constructor(private router: Router) { }
+
+
+  // logOutButton(){
+  //   localStorage.removeItem("isLogin");
+  //   this.router.navigate(['login']);
+  // }
   ngOnInit(): void {
+  }
+
+  onLogOut(){
+    console.log("Clicked logout Button");
+    // localStorage.removeItem('isLogin');
+    localStorage.clear();
+    this.router.navigate(['login']);
+
+
   }
 
 

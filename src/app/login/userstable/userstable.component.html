@@ -1,103 +1,177 @@
-<app-recruiter-header></app-recruiter-header>
-<div class="row">
-    <div class="col text-center">
-        <h2 class="name">Recruitment Process</h2>
+
+<nav id="nav-bar" class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="#" id="logo">
+      <img
+        src="https://www.epsoftinc.com/wp-content/uploads/2019/10/ep-soft-logo-rev@2x-1.png.webp"
+        class="epsoft-img"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <div class="d-flex flex-row mr-4">
+          <a
+            class="nav-link active"
+            id="navItem1"
+            routerLinkActive="active"
+            routerLink="/home"
+            (click)="onClick(1)"
+            [ngClass]="{'active': tab==='tab1'}"
+          >
+            Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </div>
+        <br />
+        <div class="d-flex flex-row mr-4">
+          <a
+            class="nav-link cursor-pointer"
+            routerLink="/register"
+            routerLinkActive="active"
+            (click)="onClick(2)"
+            [ngClass]="{'active': tab==='tab2'}"
+            id="active"
+            id="navItem2"
+            >Add Candidate</a
+          >
+        </div>
+        <br />
+        <div class="d-flex flex-row mr-4">
+          <a
+            class="nav-link  cursor-pointer"
+            routerLinkActive="active"
+            id="navItem3"
+            (click)="onClick(3)"
+            (click)="getResponse()"
+            [ngClass]="{'active': tab==='tab3'}"
+            >Applied profiles</a
+          >
+        </div>
+        <br />
+
+        <div class="d-flex flex-row mr-4">
+          <!-- <mat-icon><span class="user-icon">school</span></mat-icon> -->
+          <a
+            class="nav-link cursor-pointer"
+            routerLinkActive="active"
+            id="navItem3"
+            (click)="getFirstLevel()"
+            (click)="onClick(4)"
+            [ngClass]="{'active': tab==='tab4'}"
+            >TR</a
+          >
+        </div>
+        <br />
+        <div class="d-flex flex-row mr-4">
+          <!-- <mat-icon><span class="user-icon"></span></mat-icon> -->
+          <a
+            class="nav-link cursor-pointer"
+            routerLinkActive="active"
+            id="navItem4"
+            (click)="getSecondLevel()"
+            (click)="onClick(5)"
+            [ngClass]="{'active': tab==='tab5'}"
+            >HR</a
+          >
+        </div>
+        <br />
+        <div class="d-flex flex-row mr-4">
+          <!-- <mat-icon><span class="user-icon">security</span></mat-icon> -->
+          <a
+            class="nav-link cursor-pointer"
+            routerLinkActive="active"
+            id="navItem5"
+            (click)="offerLetter()"
+            (click)="onClick(6)"
+            [ngClass]="{'active': tab==='tab6'}"
+            >Offer Letter</a
+          >
+        </div>
+        <br />
+        <div class="d-flex flex-row mr-4">
+          <!-- <mat-icon><span class="user-icon">info</span></mat-icon> -->
+          <a
+            class="nav-link cursor-pointer"
+            id="navItem6"
+            (click)="Withdraw()"
+            (click)="onClick(7)"
+            [ngClass]="{'active': tab==='tab7'}"
+            >With Drawn</a
+          >
+        </div>
+        <br />
+        <div class="d-flex flex-row mr-4">
+          <!-- <mat-icon><span class="user-icon">logout</span></mat-icon> -->
+          <a class="nav-link" routerLink="/login" (click)="onLogOut()" id="navItem7">Logout</a>
+        </div>
+      </div>
     </div>
+  </div>
+</nav>
+<div class="container-of-table">
+    <h2 class="name">Recruitment Process</h2>
+  <div class="d-flex flex-row justify-content-end search-function">
+  <input
+    class="form-control mb-3 search-bar"
+    placeholder="Search Candidate"
+    type="search"
+    [(ngModel)]="term"
+    (ngModelChange)="Search()"
+  />
 </div>
-<div class="d-flex flex-row justify-content-end ">
-  <input class="form-control mr-5 mb-3 search-bar" placeholder="Search candidate" type="search" name="name"
-      [(ngModel)]="name" (ngModelChange)="Search()" />
-</div>
-<div class="d-flex flex-row overall">
-    <!-- <button (click)="getResponse()">
-        <a>Response</a>
-    </button>
-    <button (click)="getFirstLevel()">
-        <a>1<sup>st</sup> Level</a>
-    </button>
-    <button (click)="getSecondLevel()">
-        <a>2<sup>nd</sup> Level</a>
-    </button>
-    <button (click)="offerLetter()">
-        <a>Offer Letter</a>
-    </button>
-    <button (click)="Withdraw()">
-        <a> Withdraw </a>
-    </button> -->
-    <button class="btn btn-outline-primary btn-lg btn-block button col-sm-3 button-container applied"
-        (click)="getResponse()">
-        <a>Applied</a>
-    </button>&nbsp;
+<div class="table-container" >
+  <div class="page-container" style="margin-bottom: 20px; width: 1300px; height: 300px; background-color: #ffffff;" >
+    <table class="table-container" >
+      <thead style="width: 80%;" id="table-head">
+        <tr >
+          <th class="text-center heading-table border-radius-left" >Candidate Id</th>
+          <th class="text-center heading-table" name="name">Full Name</th>
+          <th class="text-center heading-table">Email Id</th>
+          <th class="text-center heading-table">Mobile</th>
+          <th class="text-center heading-table">Qualification</th>
+          <th class="text-center heading-table">Skills</th>
+          <th class="text-center heading-table">Experience</th>
+          <th class="text-center heading-table">Expected CTC</th>
+          <th class="text-center heading-table">Date Of Birth</th>
+          <th class="text-center heading-table">Status</th>
+          <th class="text-center heading-table border-radius-right">Action</th>
+        </tr>
+      </thead>
+      <tr
+      style="border: 2px solid transparent; outline: none; border: none; width: 200px;"
+        *ngFor="let user of users | paginate: {itemsPerPage: 5, currentPage: p} | filter: term"
+      >
+        <td>{{user.candidateId}}</td>
+        <td>{{user.fullName}}</td>
+        <td>{{user.emailId}}</td>
+        <td>{{user.mobileNumber}}</td>
+        <td>{{user.qualification}}</td>
+        <td>{{user.skillSet}}</td>
+        <td>{{user.yearsOfExperience}}</td>
+        <td>{{user.expectedCtc}}</td>
+        <td>{{user.dateOfBirth}}</td>
+        <td>{{user.status}}</td>
+        <td class="action">
+          <button class="edit button-b" (click)="edit(user.candidateId)">
+            Edit
+          </button>
+        </td>
 
-    <button class="btn btn-outline-secondary btn-lg btn-block button col-sm-3 button-container"
-        (click)="getFirstLevel()">
-        <a>First Level</a>
-    </button>&nbsp;
+      </tr>
 
-
-    <button class="btn btn-outline-info btn-lg btn-block button col-sm-3 button-container" (click)="getSecondLevel()">
-        <a>Second Level</a>
-    </button>&nbsp;
-
-
-    <button class="btn btn-outline-success btn-lg btn-block button col-sm-3 button-container" (click)="offerLetter()">
-        <a>Selected</a>
-    </button>&nbsp;
-
-
-    <button class="btn btn-outline-danger btn-lg btn-block button col-sm-3 button-container" (click)="Withdraw()">
-        <a> Withdrawn</a>
-    </button>&nbsp;
-
-</div>
-<div class="p-4">
-    <!-- <div class="d-flex flex-row justify-content-between">
-        <input class="form-control mr-5" placeholder="Search candidate" type="search" name="name" [(ngModel)]="name"
-            (ngModelChange)="Search()" />
-        <a><button class="add-user-btn " routerLink="/adduser" routerLinkActive="active-add-user"> Add
-                Candidate</button></a>
-    </div> -->
-    <br>
-    <!-- id="customers" -->
-    <table >
-        <thead>
-            <tr>
-                <th class="text-center">candidate id</th>
-                <th class="text-center" name="name">Full Name</th>
-                <th class="text-center">Email Id</th>
-                <th class="text-center">Mobile</th>
-                <th class="text-center">Qualification</th>
-                <th class="text-center">Skills</th>
-                <th class="text-center">Experience</th>
-                <th class="text-center">Expected Ctc</th>
-                <th class="text-center">Date Of Birth</th>
-                <th class="text-center">Status</th>
-                <th class="text-center">Action</th>
-            </tr>
-        </thead>
-        <!-- <tbody> -->
-            <tr *ngFor="let user of users | paginate: {itemsPerPage: 6, currentPage: p}">
-                <td>  {{user.candidateId}}   </td>
-                <td>{{user.fullName}}</td>
-                <td>{{user.emailId}}</td>
-                <td>{{user.mobileNumber}}</td>
-                <td>{{user.qualification}}</td>
-                <td>{{user.skillSet}}</td>
-                <td>{{user.yearsOfExperience}}</td>
-                <td>{{user.expectedCtc}}</td>
-                <td>{{user.dateOfBirth}}</td>
-                <td>{{user.status}}</td>
-                <td class="action">
-                    <button class="edit button-b" (click)="edit(user.candidateId)">Edit</button>
-                    <!-- <button class="delete button-b" (click)="withDraw(user.candidateId)"  >Delete</button> -->
-                </td>
-            </tr>
-        <!-- </tbody> -->
-        <!-- <td class="action">
-          <button class="edit button-b">Edit</button>
-          <button class="delete button-b">Delete</button>
-        </td> -->
     </table>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
-
+  </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
 </div>

@@ -1,6 +1,7 @@
 .edit-container{
   height: 100vh;
   padding: 20px;
+  padding-bottom: 30px;
 }
 .form-container{
   height: 70%;
@@ -12,8 +13,19 @@
   width: 300px;
   /* border: 2px red solid; */
 }
-.drop-down{
-  height: 35px;
-  width: 300px;
+.drop-down-select{
+  border: 1px grey solid;
+  width: 48vw;
 }
-
+.drop-down{
+  /* height: 35px; */
+  width: 46vw;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  border: none;
+  border-color: #dce0e6;
+}
+.update-back{
+  margin-bottom: 10px;
+}
