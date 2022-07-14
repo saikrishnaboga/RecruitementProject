@@ -9,4 +9,5 @@ export class Users {
   skillSet!: any;
   status!: any;
   yearsOfExperience!: any;
+  comment!: any;
 }

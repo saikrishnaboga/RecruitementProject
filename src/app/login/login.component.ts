@@ -32,36 +32,18 @@ export class LoginComponent implements OnInit  {
 
   constructor(private service: ApiService ,config: NgbCarouselConfig, private formBuilder : FormBuilder, private http: HttpClient, private router: Router )   {
     // constructor(config: NgbCarouselConfig,private router: Router, private formBuilder: FormBuilder )   {
-    config.interval = 2000;
+    config.interval = 8000;
     config.keyboard = true;
-    config.pauseOnHover = true;
-    this.myForm();
+    // config.pauseOnHover = true;
   }
 
-  myForm(){
-    this.loginForm = this.formBuilder.group(
-      {
-      userName: ['', Validators.required],
-      password : ['', Validators.required]
-    }
-    )
 
-    this.loginForm = new FormGroup({
-      username: new FormControl('',[Validators.required, Validators.email]),
-      password: new FormControl('',[Validators.required])
-    })
-
-  }
-
-  url: String = "http://10.12.1.123:8080/"
 
   hide = true;
 
   ngOnInit(): void {
 
     let value: any = localStorage.getItem('isLogin');
-
-
 
     console.log(value);
     if(value != null){
@@ -79,8 +61,6 @@ export class LoginComponent implements OnInit  {
   }
 
   login(){
-
-
     const userName = this.loginForm.value.userName;
     const password = this.loginForm.value.password;
     console.log(this.loginForm.value);
@@ -93,7 +73,7 @@ export class LoginComponent implements OnInit  {
           localStorage.setItem('isLogin', 'authorizedUser');
           this.router.navigate(['recruiter']);
         } else {
-          Swal.fire('Invalid User Details');
+          Swal.fire("Error",'Invalid User Details',"error");
         }
       });
     } else if (userName == '' && password == '') {

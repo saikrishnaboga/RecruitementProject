@@ -97,6 +97,16 @@
         disabled
       />
     </div>
+    <div class="form-group">
+      <label for="Firstname">Comment:</label>
+      <input
+        type="text"
+        class="form-control"
+        required
+        [(ngModel)]="users.comment"
+        name="expectedCtc"
+      />
+    </div>
     <div class="form-group drop-down-edit-container">
       <label for="Firstname">Status:</label>
       <!-- <input type="text" class="form-control" required [(ngModel)]="users.status" name="status"> -->
@@ -107,10 +117,10 @@
           name="status"
           class="drop-down"
         >
-          <option value="AppliedCandidates" selected>Applied Candidates</option>
-          <option value="TechnicalRound">Technical Round</option>
-          <option value="HrRound">Hr Round</option>
-          <option value="offerLetter">Offer Letter</option>
+          <option value="New Candidates" selected>New Candidates</option>
+          <option value="Technical Round">Technical Round</option>
+          <option value="Hr Round">Hr Round</option>
+          <option value="Selected Candidates">Selected Candidates</option>
           <option value="withDrawn">WithDrawn Candidates</option>
         </select>
       </div>

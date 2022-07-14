@@ -52,8 +52,8 @@ export class ApiService {
     return this.http.put<any>(`${this.url}/freshers/update-status/` + id, Body);
   }
 
-  withDrawnCandidateById(Body: any, id: any): Observable<any> {
-    return this.http.put<any>(`${this.url}/freshers/update-status/` + id, Body);
-  }
+  // withDrawnCandidateById(Body: any, id: any): Observable<any> {
+  //   return this.http.put<any>(`${this.url}/freshers/update-status/` + id, Body);
+  // }
 
 }

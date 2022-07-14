@@ -24,12 +24,12 @@ export class RegistrationComponent implements OnInit {
     private router: Router
   ) {}
 
-  public status: String = "AppliedCandidates"
+  public status: String = 'AppliedCandidates';
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
       fullName: new FormControl('', [Validators.required]),
-      emailId: new FormControl('', [Validators.required , Validators.email]),
+      emailId: new FormControl('', [Validators.required, Validators.email]),
       mobileNumber: new FormControl('', [
         Validators.required,
         Validators.minLength(10),
@@ -44,17 +44,15 @@ export class RegistrationComponent implements OnInit {
     console.log(this.registerForm.value);
   }
 
+  onlyNumbersAllowed(event: any): any {
+    const charCode = event.which ? event.which : event.keyCode;
 
-  onlyNumbersAllowed(event:any):any{
-
-  const charCode = (event.which)? event.which:event.keyCode;
-
-    if(charCode > 31 && (charCode < 48 || charCode > 57)){
-      console.log("char code restricted:"+charCode)
-      return false
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      console.log('char code restricted:' + charCode);
+      return false;
     }
 
-    return true
+    return true;
   }
   // getFormValidationErrors() {
   //   Object.keys(this.registerForm.controls).forEach(key => {
@@ -71,16 +69,22 @@ export class RegistrationComponent implements OnInit {
     console.log(this.registerForm.value);
 
     let value = this.registerForm.value;
-    value.status = "AppliedCandidates"
+    value.status = 'New Candidates';
 
     this.service.registerDetails(value).subscribe(
       (res: any) => {
         console.log(res);
         localStorage.setItem('user', JSON.stringify(res));
         if (res) {
-          Swal.fire('Success', 'Registered Succefully', 'success');
+          // Swal.fire('Success', 'Registered Succefully', 'success');
           this.registerForm.reset();
-          this.router.navigate(['home'])
+          Swal.fire('Success','Registered Succefully',"success").then(
+            (value) => {
+              if(value){
+                this.router.navigate(['home']);
+              }
+            }
+          );
           // this.registerForm.get('yearsOfExeperience').setValue('');
         } else {
           Swal.fire('Error', 'Invalid User Details', 'error');
@@ -96,7 +100,6 @@ export class RegistrationComponent implements OnInit {
     );
   }
 }
-function numPattern(numPattern: any): import("@angular/forms").ValidatorFn {
+function numPattern(numPattern: any): import('@angular/forms').ValidatorFn {
   throw new Error('Function not implemented.');
 }
-

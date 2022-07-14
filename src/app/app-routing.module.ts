@@ -13,7 +13,6 @@ import { UserstableComponent } from './login/userstable/userstable.component';
 import { RecruiterComponent } from './login/recruiter/recruiter.component';
 import { EditCandidateComponent } from './login/userstable/edit-candidate/edit-candidate.component';
 
-
 const appRoutes: Routes = [
   {path : "", redirectTo: "home", pathMatch: "full"},
   {path: "home", component: HomeComponent},
@@ -38,7 +37,7 @@ const appRoutes: Routes = [
   //   ],
   // exports: [RouterModule]
 
-  imports: [RouterModule.forRoot(appRoutes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(appRoutes, { enableTracing: true } )],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

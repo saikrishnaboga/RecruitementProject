@@ -1,4 +1,3 @@
-
 <nav id="nav-bar" class="navbar navbar-expand-lg navbar-light">
   <div class="container">
     <a class="navbar-brand" href="#" id="logo">
@@ -20,8 +19,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ml-auto">
-        <div class="d-flex flex-row mr-4">
-          <a
+        <!-- <div class="d-flex flex-row mr-4"> -->
+        <!-- <a
             class="nav-link active"
             id="navItem1"
             routerLinkActive="active"
@@ -32,9 +31,9 @@
             Home
             <span class="sr-only">(current)</span>
           </a>
-        </div>
-        <br />
-        <div class="d-flex flex-row mr-4">
+        </div> -->
+        <!-- <br /> -->
+        <!-- <div class="d-flex flex-row mr-4">
           <a
             class="nav-link cursor-pointer"
             routerLink="/register"
@@ -46,10 +45,10 @@
             >Add Candidate</a
           >
         </div>
-        <br />
+        <br /> -->
         <div class="d-flex flex-row mr-4">
           <a
-            class="nav-link  cursor-pointer"
+            class="nav-link cursor-pointer"
             routerLinkActive="active"
             id="navItem3"
             (click)="onClick(3)"
@@ -95,7 +94,7 @@
             (click)="offerLetter()"
             (click)="onClick(6)"
             [ngClass]="{'active': tab==='tab6'}"
-            >Offer Letter</a
+            >selected Candidates</a
           >
         </div>
         <br />
@@ -113,65 +112,296 @@
         <br />
         <div class="d-flex flex-row mr-4">
           <!-- <mat-icon><span class="user-icon">logout</span></mat-icon> -->
-          <a class="nav-link" routerLink="/login" (click)="onLogOut()" id="navItem7">Logout</a>
+          <a class="nav-link" (click)="onLogOut()" id="navItem7">Logout</a>
         </div>
       </div>
     </div>
   </div>
 </nav>
 <div class="container-of-table">
-    <h2 class="name">Recruitment Process</h2>
+  <h2 class="name">Recruitment Process</h2>
   <div class="d-flex flex-row justify-content-end search-function">
-  <input
-    class="form-control mb-3 search-bar"
-    placeholder="Search Candidate"
-    type="search"
-    [(ngModel)]="term"
-    (ngModelChange)="Search()"
-  />
-</div>
-<div class="table-container" >
-  <div class="page-container" style="margin-bottom: 20px; width: 1300px; height: 300px; background-color: #ffffff;" >
-    <table class="table-container" >
-      <thead style="width: 80%;" id="table-head">
-        <tr >
-          <th class="text-center heading-table border-radius-left" >Candidate Id</th>
-          <th class="text-center heading-table" name="name">Full Name</th>
-          <th class="text-center heading-table">Email Id</th>
-          <th class="text-center heading-table">Mobile</th>
-          <th class="text-center heading-table">Qualification</th>
-          <th class="text-center heading-table">Skills</th>
-          <th class="text-center heading-table">Experience</th>
-          <th class="text-center heading-table">Expected CTC</th>
-          <th class="text-center heading-table">Date Of Birth</th>
-          <th class="text-center heading-table">Status</th>
-          <th class="text-center heading-table border-radius-right">Action</th>
-        </tr>
-      </thead>
-      <tr
-      style="border: 2px solid transparent; outline: none; border: none; width: 200px;"
-        *ngFor="let user of users | paginate: {itemsPerPage: 5, currentPage: p} | filter: term"
-      >
-        <td>{{user.candidateId}}</td>
-        <td>{{user.fullName}}</td>
-        <td>{{user.emailId}}</td>
-        <td>{{user.mobileNumber}}</td>
-        <td>{{user.qualification}}</td>
-        <td>{{user.skillSet}}</td>
-        <td>{{user.yearsOfExperience}}</td>
-        <td>{{user.expectedCtc}}</td>
-        <td>{{user.dateOfBirth}}</td>
-        <td>{{user.status}}</td>
-        <td class="action">
-          <button class="edit button-b" (click)="edit(user.candidateId)">
-            Edit
-          </button>
-        </td>
-
-      </tr>
-
-    </table>
+    <label for="search">
+      <mat-icon class="search">search</mat-icon>
+    </label>
+    <input
+      id="search"
+      class="form-control mb-3 search-bar"
+      placeholder="Search Candidate"
+      type="search"
+      [(ngModel)]="term"
+      (ngModelChange)="Search()"
+    />
   </div>
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
-</div>
+  <div class="table-container">
+    <div
+      class="page-container"
+      style="
+        margin-bottom: 20px;
+        width: 1300px;
+        height: 300px;
+        background-color: #ffffff;
+      "
+    >
+      <table class="table-container">
+        <thead style="width: 80%;" id="table-head">
+          <tr>
+            <th
+              class="text-center heading-table border-radius-left d-flex"
+              [class.active]="order ==='candidateId'"
+              (click)="setOrder('candidateId')"
+            >
+              Candidate Id
+              <span [hidden]="reverse">▼</span
+              ><span [hidden]="!reverse">▲</span>
+            </th>
+            <th
+              class="text-center heading-table"
+              name="name"
+              [class.active]="order ==='fullName'"
+              (click)="setOrder('fullName')"
+            >
+              Full Name <span [hidden]="reverse">▼</span
+              ><span [hidden]="!reverse">▲</span>
+            </th>
+
+            <th
+              class="text-center heading-table"
+              [class.active]="order ==='emailId'"
+              (click)="setOrder('emailId')"
+            >
+              Email Id <span [hidden]="reverse">▼</span
+              ><span [hidden]="!reverse">▲</span>
+            </th>
+            <th class="text-center heading-table">Mobile</th>
+            <th class="text-center heading-table">Qualification</th>
+            <th class="text-center heading-table">Skills</th>
+            <th class="heading-table">Experience</th>
+
+            <th class="text-center heading-table">Expected CTC</th>
+            <th class="text-center heading-table">Comment</th>
+            <th class="text-center heading-table">Status</th>
+            <th class="text-center heading-table border-radius-right">
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tr
+          style="
+            border: 2px solid transparent;
+            outline: none;
+            border: none;
+            width: 200px;
+          "
+          *ngFor="let user of users | paginate: {itemsPerPage: 4, currentPage: p} | filter: term | orderBy: order  : isDescOrder"
+        >
+          <td>{{user.candidateId}}</td>
+          <td>{{user.fullName}}</td>
+          <td>{{user.emailId}}</td>
+          <td>{{user.mobileNumber}}</td>
+          <td>{{user.qualification}}</td>
+          <td>{{user.skillSet}}</td>
+          <td>{{user.yearsOfExperience}}</td>
+          <td>{{user.expectedCtc}}</td>
+          <td>{{user.comment}}</td>
+          <td>{{user.status}}</td>
+          <td class="action">
+            <!-- <button class="edit button-b" (click)="edit(user.candidateId)">
+            Edit
+          </button> -->
+            <div class="container">
+              <!-- Button to Open the Modal -->
+              <button
+                type="button"
+                class="btn btn-primary modal-lg"
+                data-toggle="modal"
+                data-target="#myModal"
+                (click)="edit(user.candidateId)"
+              >
+                Edit
+              </button>
+              <!-- The Modal -->
+              <div class="modal" id="myModal" [ngStyle]="{'display':display}">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h2>Edit Candidate Details</h2>
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        onClick="close()"
+                      >
+                        &times;
+                      </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <div class="modal-lg container edit-container">
+                        <form
+                          class="form-container"
+                          #adduserform="ngForm"
+                          (ngSubmit)="updateCustomerById('candidateId')"
+                        >
+                          <!-- <div class="form-group">
+                                <label for="id">id:</label>
+                                <input type="text"class="form-control" required [(ngModel)]="customer.id"name="id" disabled>
+                              </div> -->
+                          <!-- <div class="form-group">
+                            <label for="Firstname">Candidate Id:</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              required
+                              [(ngModel)]="usersById.candidateId"
+                              name="candidateId"
+                              disabled
+                            />
+                          </div> -->
+                          <div class="form-group">
+                            <label for="Lastname">Full Name:</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              required
+                              [(ngModel)]="usersById.fullName"
+                              name="fullName"
+                              disabled
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="Email">Email Id:</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              required
+                              [(ngModel)]="usersById.emailId "
+                              name="emailId"
+                              disabled
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="Firstname">Mobile:</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              required
+                              [(ngModel)]="usersById.mobileNumber"
+                              name="mobileNumber"
+                              disabled
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="Firstname">Qualification:</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              required
+                              [(ngModel)]="usersById.qualification"
+                              name="qualification"
+                              disabled
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="Firstname">Skills:</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              required
+                              [(ngModel)]="usersById.skillSet"
+                              name="skillSet"
+                              disabled
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="Firstname">Experience:</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              required
+                              [(ngModel)]="usersById.yearsOfExperience"
+                              name="yearsOfExperience"
+                              disabled
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="Firstname">Expected CTC:</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              required
+                              [(ngModel)]="usersById.expectedCtc"
+                              name="expectedCtc"
+                              disabled
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="Firstname">Comment:</label>
+                            <textarea
+                              type="text"
+                              class="form-control"
+                              required
+                              [(ngModel)]="usersById.comment"
+                              name="comment"
+                              rows="2"
+                              cols="20"
+                            ></textarea>
+                          </div>
+                          <div class="form-group drop-down-edit-container">
+                            <label for="Firstname">Status:</label>
+                            <!-- <input type="text" class="form-control" required [(ngModel)]="users.status" name="status"> -->
+                            <div class="form-control drop-down-select">
+                              <select
+                                required
+                                [(ngModel)]="usersById.status"
+                                name="status"
+                                class="drop-down"
+                              >
+                                <option value="New Candidates" selected
+                                  >New Candidates</option
+                                >
+                                <option value="Technical Round"
+                                  >Technical Round</option
+                                >
+                                <option value="Hr Round">Hr Round</option>
+                                <option value="Selected Candidates"
+                                  >Selected Candidates</option
+                                >
+                                <option value="withDrawn"
+                                  >WithDrawn Candidates</option
+                                >
+                              </select>
+                            </div>
+                          </div>
+                          <div class="update-back">
+                            <button type="submit" class="btn btn-success">
+                              update</button
+                            >&nbsp;&nbsp;
+                          </div>
+                          <!-- Example single danger button -->
+                          &nbsp;&nbsp;
+                          <!-- <div class="btn-group">
+                                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                      aria-expanded="false">
+                                      Action
+                                  </button>
+                              </div> -->
+                        </form>
+                      </div>
+                      <br />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <pagination-controls
+    (pageChange)="p = $event"
+    class="pagination"
+  ></pagination-controls>
 </div>
